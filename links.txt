@@ -1,0 +1,6 @@
+AND = 'https://www.youtube.com/watch?v=o8kAhNwiPjw&t=183s'
+OR = 'https://www.youtube.com/watch?v=qaQ0cLC66GE'
+XOR = 'https://www.youtube.com/watch?v=Ik66e8jS9RA'
+NOT = 'https://www.youtube.com/watch?v=vg67x1javjo'
+
+WIKI = 'https://ru.wikipedia.org/wiki/Логический_вентиль'
