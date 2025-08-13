@@ -16,3 +16,4 @@ main = ReplyKeyboardMarkup(keyboard=[
 settings = InlineKeyboardMarkup(inline_keyboard=[
     [InlineKeyboardButton(text='Подробнее...', callback_data='more')]
 ])
+
