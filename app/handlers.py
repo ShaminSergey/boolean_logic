@@ -6,7 +6,14 @@ import app.keyboards as kb
 router = Router()
 
 msg_help = 'Бот создан для начинающих любителей логической электроника'
-file_or = FSInputFile("./app/image/OR-gate.gif")
+
+affiliation = ['ГОСТ', 'EUROPA', 'USA']
+
+file_or = [FSInputFile("./app/image/logic gate/or/OR_gate_RU.jpg"),
+           FSInputFile("./app/image/logic gate/or/IEC_OR_label.jpg"),
+           FSInputFile("./app/image/logic gate/or/Or-gate-en.jpg")]
+
+
 file_and = FSInputFile("./app/image/AND.gif")
 
 
@@ -15,15 +22,10 @@ async def cmd_start(message: Message):
     await message.reply(f'Привет, {message.from_user.first_name}', reply_markup=kb.main)
 
 
-@router.message(F.text == 'Логические вентили')
-async def log_ven(message: Message):
-    await message.answer_animation(animation=file_or, caption='Вентиль - ИЛИ')
-    await message.answer_animation(animation=file_and, caption='Вентиль - И')
-
-
-@router.message(F.text == 'Логические блоки')
-async def log_block(message: Message):
-    await message.answer("Логические блоки,отличный выбор!")
+@router.message(F.text == 'Логический вентиль "ИЛИ"')
+async def log_or(message: Message):
+    for i in range(3):
+        await message.answer_animation(animation=file_or[i], caption=f'Вентиль - "ИЛИ" по {affiliation[i]}')
 
 
 @router.message(Command('help'))
